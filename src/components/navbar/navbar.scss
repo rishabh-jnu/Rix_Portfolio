@@ -59,7 +59,7 @@
 
       a {
         display: inline-block;
-        transition: transform 0.3s ease, filter 0.3s ease; /* Smooth animation */
+        transition: transform 0.3s ease, filter 0.3s ease;
       }
 
       img {
@@ -70,14 +70,45 @@
       }
 
       /* Hover Effects */
-      a:hover {
+      a:hover, .music-icon:hover {
         transform: scale(1.2); /* Slightly increase size */
       }
 
       img:hover {
         filter: brightness(1.3); /* Brighten the icons slightly */
       }
-      
+
+      /* Music Icon */
+      .music-icon {
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+
+        img {
+          width: 26px; /* Slightly bigger */
+          height: 26px;
+        }
+
+        &:hover {
+          transform: scale(1.2);
+          filter: brightness(1.3);
+        }
+
+        &.playing {
+          animation: pulse 1.5s infinite alternate;
+        }
+      }
     }
+  }
+}
+
+/* Pulse animation when music is playing */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 0.8;
   }
 }

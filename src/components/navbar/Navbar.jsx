@@ -4,13 +4,9 @@ import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 
 const Navbar = () => {
-  // State to track if music is playing
   const [isPlaying, setIsPlaying] = useState(false);
-  
-  // Reference to the audio element
   const audioRef = useRef(null);
 
-  // Function to toggle music playback
   const toggleMusic = () => {
     if (audioRef.current) {
       if (isPlaying) {
@@ -24,7 +20,6 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      {/* Sidebar */}
       <Sidebar />
       <div className="wrapper">
         <div className="name-container">
@@ -41,7 +36,6 @@ const Navbar = () => {
             <br />
           </motion.span>
 
-          {/* Moving Portfolio */}
           <motion.span
             className="portfolio"
             initial={{ opacity: 0, y: 50 }}
@@ -52,7 +46,6 @@ const Navbar = () => {
           </motion.span>
         </div>
 
-        {/* Social Icons */}
         <div className="social">
           <a href="https://x.com/rishabhyad19" target="_blank" rel="noopener noreferrer">
             <img src="/twitter.png" alt="Twitter" />
@@ -64,13 +57,13 @@ const Navbar = () => {
             <img className="github" src="/github.jpeg" alt="GitHub" />
           </a>
 
-          {/* Music Icon - Plays Music on Click */}
-          <div className="music-icon" onClick={toggleMusic}>
+          {/* Music Icon */}
+          <div className={`music-icon ${isPlaying ? "playing" : ""}`} onClick={toggleMusic}>
             <img src="/music1.png" alt="Music" />
           </div>
 
-          {/* Hidden Audio Player */}
-          <audio ref={audioRef} src="/audio.mp3"></audio>
+          {/* Audio Player (Hidden) */}
+          <audio ref={audioRef} src="/spotifyOr.mp3"></audio>
         </div>
       </div>
     </div>
