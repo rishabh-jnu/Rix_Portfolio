@@ -1,0 +1,67 @@
+@import "../../app.scss";
+
+.navbar {
+  height: 100px;
+
+  .wrapper {
+    max-width: 1366px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+
+    @include mobile {
+      justify-content: flex-end;
+      padding: 20px;
+    }
+
+    .name-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .name {
+      font-weight: bold;
+      font-size: 24px; // Base font size
+      display: flex;
+      align-items: baseline; // Aligns "DEV" correctly
+
+      @include mobile {
+        display: none;
+      }
+
+      .highlight {
+        font-size: 32px; // Slightly larger "R"
+      }
+      .highlight2 {
+        font-size: 22px; // Slightly larger "R"
+      }
+
+      .superscript {
+        font-size: 18px; // Smaller size for "DEV"
+        position: relative;
+        top: -10px; // Moves "DEV" up
+        margin-left: 3px; // Small gap from "RISHABH"
+      }
+    }
+
+    .portfolio {
+      font-size: 32px;
+      font-weight: bold;
+    //   color: #ff5722; // Change this color as needed
+      text-transform: uppercase;
+    }
+
+    .social {
+      display: flex;
+      gap: 20px;
+
+      img {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+}
