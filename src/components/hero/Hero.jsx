@@ -23,6 +23,7 @@ const textVariants = {
     },
   },
 };
+
 const sliderVariants = {
   initial: {
     x: 0,
@@ -50,7 +51,9 @@ const Hero = () => {
           <motion.h2 variants={textVariants}>
             <span className="highlight">H</span>EY, I'm
             <span className="highlight">R</span>ISHABH
-            <span className="superscript"><span className="highlight2">D</span>EV</span>
+            <span className="superscript">
+              <span className="highlight2">D</span>EV
+            </span>
           </motion.h2>
           <motion.h1 variants={textVariants} className="developer-text">
             A YOUNG <span>DEVELOPER</span>
@@ -62,14 +65,21 @@ const Hero = () => {
             </motion.button>
             <motion.button variants={textVariants}>Contact Me</motion.button>
           </motion.div>
-          <motion.img
-            variants={textVariants}
-            animate="scrollButton"
-            src="/scroll.png"
-            alt=""
-          />
+
+          {/* Scroll Image and Text */}
+          <div className="scrollContainer">
+            <motion.img
+              variants={textVariants}
+              animate="scrollButton"
+              src="/newscroll.png"
+              alt=""
+            />
+            <span className="dive">Scroll to Dive</span>
+          </div>
         </motion.div>
       </div>
+
+      {/* Ensure this motion.div is properly closed */}
       <motion.div
         className="slidingTextContainer"
         variants={sliderVariants}
@@ -78,9 +88,6 @@ const Hero = () => {
       >
         Make It Work, Make It Right, Make It Fast
       </motion.div>
-      {/* <div className="imageContainer">
-        <img src="/hero.png" alt="" />
-      </div> */}
     </div>
   );
 };

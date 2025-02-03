@@ -24,33 +24,32 @@
 
     .name {
       font-weight: bold;
-      font-size: 24px; // Base font size
+      font-size: 24px;
       display: flex;
-      align-items: baseline; // Aligns "DEV" correctly
+      align-items: baseline;
 
       @include mobile {
         display: none;
       }
 
       .highlight {
-        font-size: 32px; // Slightly larger "R"
+        font-size: 32px;
       }
       .highlight2 {
-        font-size: 22px; // Slightly larger "R"
+        font-size: 22px;
       }
 
       .superscript {
-        font-size: 18px; // Smaller size for "DEV"
+        font-size: 18px;
         position: relative;
-        top: -10px; // Moves "DEV" up
-        margin-left: 3px; // Small gap from "RISHABH"
+        top: -10px;
+        margin-left: 3px;
       }
     }
 
     .portfolio {
       font-size: 32px;
       font-weight: bold;
-    //   color: #ff5722; // Change this color as needed
       text-transform: uppercase;
     }
 
@@ -58,10 +57,27 @@
       display: flex;
       gap: 20px;
 
-      img {
-        width: 18px;
-        height: 18px;
+      a {
+        display: inline-block;
+        transition: transform 0.3s ease, filter 0.3s ease; /* Smooth animation */
       }
+
+      img {
+        width: 24px;
+        height: 24px;
+        border-radius: 10%;
+        transition: transform 0.3s ease, filter 0.3s ease;
+      }
+
+      /* Hover Effects */
+      a:hover {
+        transform: scale(1.2); /* Slightly increase size */
+      }
+
+      img:hover {
+        filter: brightness(1.3); /* Brighten the icons slightly */
+      }
+      
     }
   }
 }

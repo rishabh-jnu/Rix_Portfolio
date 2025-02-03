@@ -121,4 +121,26 @@
     font-weight: bold;
     margin-bottom: 10px;
   }
+
+  .scrollContainer {
+  display: flex;
+  align-items: center; 
+  gap: 10px; // Adjust spacing between image and text
+
+  img {
+    width: 50px; // Adjust size as needed
+  }
+
+  span {
+    color: white;
+    font-size: 16px;
+    font-weight: 300;
+    white-space: nowrap;
+  }
+}
+
+.dive{
+  margin-top: 45px;
+}
+
 }
