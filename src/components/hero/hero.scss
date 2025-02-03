@@ -30,7 +30,7 @@
       h2 {
         font-size: 30px;
         color: rebeccapurple;
-        letter-spacing: 10px;
+        letter-spacing: 3px;
       }
 
       h1 {
@@ -39,6 +39,37 @@
         @include mobile {
           font-size: 36px;
         }
+      }
+
+      .developer-text {
+        font-size: 88px;
+        white-space: nowrap; // Ensures text does not wrap
+
+        @include mobile {
+          font-size: 36px;
+        }
+
+        span {
+          font-size: inherit; // Keeps the same font size as the parent (h1)
+          color: rebeccapurple; // Optional: Highlight span text if needed
+        }
+      }
+
+
+      .highlight {
+        font-size: 36px; // Slightly larger "R"
+        margin-left: 6px;
+      }
+
+      .highlight2 {
+        font-size: 26px; // Slightly larger "R"
+      }
+
+      .superscript {
+        font-size: 18px; // Smaller size for "DEV"
+        position: relative;
+        top: -10px; // Moves "DEV" up
+        margin-left: 1px; // Small gap from "RISHABH"
       }
 
       .buttons {
@@ -73,7 +104,7 @@
       bottom: 0;
     }
 
-    img{
+    img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -88,5 +119,6 @@
     color: #ffffff09;
     width: 50%;
     font-weight: bold;
+    margin-bottom: 10px;
   }
 }
