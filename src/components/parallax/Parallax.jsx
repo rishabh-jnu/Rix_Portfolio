@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import "./parallax.scss";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
 const Parallax = ({ type }) => {
   const ref = useRef();
@@ -10,8 +10,16 @@ const Parallax = ({ type }) => {
     offset: ["start start", "end start"],
   });
 
-  const yText = useTransform(scrollYProgress, [0, 1], ["0%", "500%"]);
-  const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  // Apply smooth scrolling effect
+  const smoothScroll = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 20,
+    mass: 1,
+  });
+
+  // Adjusted yText transformation to prevent excessive downward movement
+  const yText = useTransform(smoothScroll, [0, 1], ["0%", "80%"]);
+  const yBg = useTransform(smoothScroll, [0, 1], ["0%", "40%"]);
 
   return (
     <div
@@ -29,6 +37,7 @@ const Parallax = ({ type }) => {
           <>
             <span className="elevate">Elevate.</span>
             <span className="subtext">From Code to Creation</span>
+            <span className="tech-stack">Tech Stack</span>
           </>
         ) : (
           <h1>What We Did?</h1>

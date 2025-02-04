@@ -2,22 +2,25 @@
 
 .parallax {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Aligns everything to the left */
+  justify-content: center; 
   overflow: hidden;
-  padding-left: 200px; /* Adds margin from the left */
+  padding: 0 10vw; /* Adds horizontal padding */
 
   @include mobile {
-    padding-left: 20px; /* Less margin on smaller screens */
+    padding: 0 5vw;
   }
 
   .text-container {
+    position: absolute;
+    top: 20%; /* Adjusted to prevent shifting too far */
+    left: 10%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Aligns text to the left */
+    align-items: flex-start;
     text-align: left;
     z-index: 4;
 
@@ -30,15 +33,26 @@
     .subtext {
       font-size: 48px;
       color: #aaa;
-      margin-top: -10px; /* Adjust spacing */
+      margin-top: -10px;
+    }
+
+    .tech-stack {
+      font-size: 40px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-top: 200px;
     }
 
     @include mobile {
+      top: 10%;
       .elevate {
         font-size: 72px;
       }
       .subtext {
         font-size: 32px;
+      }
+      .tech-stack {
+        font-size: 28px;
       }
     }
   }
@@ -73,7 +87,7 @@
   }
 
   .stars {
-    background-image: url(".png");
+    background-image: url("/sta.png");
     background-size: cover;
     background-position: bottom;
     width: 100%;
