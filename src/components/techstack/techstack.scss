@@ -1,0 +1,106 @@
+@import "../../app.scss";
+
+.techstack {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  min-height: 100vh; /* Set to full screen height */
+  padding: 50px;
+  background: linear-gradient(180deg, #0c0c1d, #111132);
+  color: white;
+  overflow-y: auto; /* Allow scroll inside */
+}
+
+.left {
+  flex: 1;
+  max-width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-left: 50px;
+
+  h1 {
+    font-size: 55px;
+    font-weight: bold;
+    color: #13b1c2;
+    font-family: vailery;
+  }
+
+  p {
+    font-size: 18px;
+    color: gray;
+    max-width: 300px;
+  }
+
+  @include mobile {
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+.right {
+  flex: 2;
+  max-width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  max-height: auto;
+  overflow-y: hidden;
+
+  .tech-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    align-items: start;
+  }
+
+  .tech-item {
+    width: 100%;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .tech-info {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      font-size: 18px;
+      color: #ccc;
+
+      .tech-name {
+        font-size: 24px;
+        font-weight: bold;
+        color: #13b1c2;
+      }
+
+      .separator {
+        margin: 0 8px;
+        font-weight: bold;
+        color: white;
+      }
+    }
+  }
+
+  .show-more-btn {
+    margin-top: 20px;
+    padding: 12px 24px;
+    background: #13b1c2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+
+    &:hover {
+      background: #0e8794;
+    }
+  }
+}

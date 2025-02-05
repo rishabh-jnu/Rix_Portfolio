@@ -29,7 +29,7 @@ const Parallax = ({ type }) => {
         background:
           type === "services"
             ? "linear-gradient(180deg, #111132, #0c0c1d)"
-            : "linear-gradient(180deg, #111132, #505064)",
+            : "linear-gradient(180deg, #111132,rgb(0, 0, 0))",
       }}
     >
       <motion.div className="text-container" style={{ y: yText }}>
@@ -40,7 +40,11 @@ const Parallax = ({ type }) => {
             <span className="tech-stack">Tech Stack</span>
           </>
         ) : (
-          <h1>What We Did?</h1>
+          <>
+          <h1 className="elevate2">The <br/> Visionary <br />WorkSpace.</h1>
+          <p className="subtext2">A space for groundbreaking ideas and showcase brilliance.</p>
+          </>
+          
         )}
       </motion.div>
 
@@ -49,7 +53,7 @@ const Parallax = ({ type }) => {
         className="planets"
         style={{
           y: yBg,
-          backgroundImage: `url(${type === "services" ? "/planet.png" : "/sunn.png"})`,
+          backgroundImage: `url(${type === "techstack" ? "/planet.png" : "/sunn.png"})`,
         }}
       ></motion.div>
       <motion.div style={{ x: yBg }} className="stars"></motion.div>

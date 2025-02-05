@@ -17,7 +17,7 @@
   .text-container {
     position: absolute;
     top: 20%; /* Adjusted to prevent shifting too far */
-    left: 10%;
+    left: 7%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -41,6 +41,19 @@
       font-weight: 600;
       color: #ffffff;
       margin-top: 200px;
+    }
+
+    .elevate2 {
+      font-size: 80px;
+      font-weight: bold;
+      color: white;
+      margin-top: 150px;
+    }
+
+    .subtext2 {
+      font-size: 20px;
+      color: #aaa;
+      margin-top: 20px;
     }
 
     @include mobile {

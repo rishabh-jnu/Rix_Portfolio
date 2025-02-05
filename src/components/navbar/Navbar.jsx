@@ -1,11 +1,29 @@
 import Sidebar from "../sidebar/Sidebar";
 import "./navbar.scss";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  // Handle Navbar Visibility on Scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY) {
+        setVisible(false); // Hide navbar on scroll down
+      } else {
+        setVisible(true); // Show navbar on scroll up
+      }
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   const toggleMusic = () => {
     if (audioRef.current) {
@@ -19,7 +37,12 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar">
+    <motion.div 
+      className={`navbar ${visible ? "visible" : "hidden"}`} 
+      initial={{ y: -100 }}
+      animate={{ y: visible ? 0 : -100 }}
+      transition={{ duration: 0.3 }}
+    >
       <Sidebar />
       <div className="wrapper">
         <div className="name-container">
@@ -66,7 +89,7 @@ const Navbar = () => {
           <audio ref={audioRef} src="/spotifyOr.mp3"></audio>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

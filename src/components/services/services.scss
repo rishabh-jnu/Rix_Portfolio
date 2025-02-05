@@ -2,7 +2,7 @@
 
 .services {
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: space-between;
   height: 100vh;
   padding: 50px;
@@ -16,7 +16,6 @@
     text-align: center;
   }
 
-  // Left Section (1/3 of the screen)
   .left {
     flex: 1;
     max-width: 30%;
@@ -44,7 +43,6 @@
     }
   }
 
-  // Right Section (2/3 of the screen)
   .right {
     flex: 2;
     max-width: 70%;
@@ -64,27 +62,19 @@
     .tech-list {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 0;
       width: 100%;
       align-items: start;
     }
 
-    .tech-box {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 15px 25px;
-      border-radius: 12px;
-      width: 90%;
-      max-width: 600px;
-      opacity: 0.9;
+    .tech-item {
+      width: 100%;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       transition: 0.3s ease-in-out;
-      position: relative;
 
       &:hover {
-        opacity: 1;
-        transform: scale(1.05);
+        background-color: rgba(255, 255, 255, 0.05);
       }
 
       .tech-info {
@@ -96,7 +86,7 @@
         color: #ccc;
 
         .tech-name {
-          font-size: 40px;
+          font-size: 50px;
           font-weight: bold;
           color: #13b1c2;
         }
@@ -109,7 +99,6 @@
       }
     }
 
-    // Floating Tech Logo
     .floating-logo {
       position: fixed;
       width: 60px;
@@ -120,7 +109,6 @@
       opacity: 0.9;
     }
 
-    // Button to show more tech stacks
     .show-more-btn {
       margin-top: 20px;
       padding: 12px 24px;

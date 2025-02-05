@@ -1,9 +1,9 @@
-import { useRef, useState } from "react";
-import "./services.scss";
+import { useRef, useState, useEffect } from "react";
+import "./techstack.scss";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 // Initial Tech Stack
-const techStack = [
+const initialTechStack = [
   { name: "React", description: "Creating dynamic user experiences", img: "/react.png" },
   { name: "Next.js", description: "Server-side rendering & static site generation", img: "/nextjs.png" },
   { name: "Node.js", description: "Building scalable backend services", img: "/nodejs.png" },
@@ -12,6 +12,10 @@ const techStack = [
   { name: "Tailwind CSS", description: "Utility-first CSS framework", img: "/tailwind.png" },
   { name: "Framer Motion", description: "Smooth animations for React", img: "/framer.png" },
   { name: "Redux", description: "State management for scalable apps", img: "/redux.png" },
+];
+
+// Additional Tech Stack
+const moreTechStack = [
   { name: "TypeScript", description: "JavaScript with static types", img: "/typescript.png" },
   { name: "GraphQL", description: "Efficient data fetching", img: "/graphql.png" },
   { name: "Docker", description: "Containerizing applications", img: "/docker.png" },
@@ -19,14 +23,29 @@ const techStack = [
   { name: "Firebase", description: "Backend services for mobile & web", img: "/firebase.png" },
 ];
 
-const Services = () => {
+const TechStack = () => {
   const ref = useRef();
+  const [showMore, setShowMore] = useState(false);
   const [hoveredTech, setHoveredTech] = useState(null);
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 
-  const { scrollYProgress } = useScroll({ target: ref });
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
 
-  const yPositions = techStack.map((_, index) =>
+  // Prevent page scrolling until the user reaches the end of the TechStack section
+  useEffect(() => {
+    const handleWheel = (e) => {
+      const bottomOfTechStack = ref.current.scrollHeight <= ref.current.scrollTop + ref.current.clientHeight;
+
+      if (!bottomOfTechStack) {
+        e.preventDefault();
+      }
+    };
+
+    ref.current.addEventListener("wheel", handleWheel, { passive: false });
+    return () => ref.current.removeEventListener("wheel", handleWheel);
+  }, []);
+
+  const yPositions = initialTechStack.map((_, index) =>
     useTransform(scrollYProgress, [0, 1], [`${index * 50}px`, "0px"])
   );
 
@@ -40,7 +59,7 @@ const Services = () => {
   };
 
   return (
-    <div className="services" ref={ref}>
+    <div className="techstack" ref={ref}>
       <div className="left">
         <h1>FRONTEND & <br />BACKEND TECH</h1>
         <p>
@@ -51,7 +70,7 @@ const Services = () => {
 
       <div className="right">
         <div className="tech-list">
-          {techStack.map((tech, index) => (
+          {initialTechStack.map((tech, index) => (
             <motion.div
               key={tech.name}
               className="tech-item"
@@ -67,6 +86,32 @@ const Services = () => {
             </motion.div>
           ))}
         </div>
+
+        {showMore && (
+          <div className="tech-list">
+            {moreTechStack.map((tech) => (
+              <motion.div
+                key={tech.name}
+                className="tech-item"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                onMouseMove={(e) => handleMouseMove(e, tech)}
+                onMouseLeave={handleMouseLeave}
+              >
+                <div className="tech-info">
+                  <span className="tech-name">{tech.name}</span>
+                  <span className="separator">-</span>
+                  <span className="tech-desc">{tech.description}</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        )}
+
+        <button className="show-more-btn" onClick={() => setShowMore(!showMore)}>
+          {showMore ? "Show Less" : "More Tech Stack"}
+        </button>
 
         {hoveredTech && (
           <motion.img
@@ -88,4 +133,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default TechStack;
