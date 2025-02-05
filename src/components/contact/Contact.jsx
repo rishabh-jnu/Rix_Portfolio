@@ -38,7 +38,7 @@ const Contact = () => {
       )
       .then(
         (result) => {
-          setSuccess(true)
+          setSuccess(true);
         },
         (error) => {
           setError(true);
@@ -58,15 +58,15 @@ const Contact = () => {
         <motion.h1 variants={variants}>Let’s work together</motion.h1>
         <motion.div className="item" variants={variants}>
           <h2>Mail</h2>
-          <span>hello@react.dev</span>
+          <span>rishabhyadav70070@gmail.com</span>
         </motion.div>
         <motion.div className="item" variants={variants}>
           <h2>Address</h2>
-          <span>Hello street New Delhi</span>
+          <span>Jawaharlal Nehru University New Delhi</span>
         </motion.div>
         <motion.div className="item" variants={variants}>
           <h2>Phone</h2>
-          <span>+91 234 5678</span>
+          <span>+91 895353XXXX</span>
         </motion.div>
       </motion.div>
       <div className="formContainer">
@@ -106,13 +106,26 @@ const Contact = () => {
           whileInView={{ opacity: 1 }}
           transition={{ delay: 4, duration: 1 }}
         >
-          <input type="text" required placeholder="Name" name="name"/>
-          <input type="email" required placeholder="Email" name="email"/>
-          <textarea rows={8} placeholder="Message" name="message"/>
+          <input type="text" required placeholder="Name" name="name" />
+          <input type="email" required placeholder="Email" name="email" />
+          <textarea rows={8} placeholder="Message" name="message" />
           <button>Submit</button>
           {error && "Error"}
           {success && "Success"}
         </motion.form>
+      </div>
+
+      {/* Footer Section */}
+      <div className="footer">
+        <div className="footerLinks">
+          <div>Explore  -</div>
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#techstack">TechStack</a>
+          <a href="#project">Project</a>
+        </div>
+        <hr className="horizontalLine" />
+        <div className="copyright">© 2025 Rishabh. All Rights Reserved.</div>
       </div>
     </motion.div>
   );

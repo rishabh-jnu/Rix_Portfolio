@@ -7,6 +7,7 @@
   display: flex;
   align-items: center;
   gap: 50px;
+  position: relative; /* To accommodate footer at the bottom */
 
   @include mobile {
     width: 100%;
@@ -44,48 +45,134 @@
   .formContainer {
     flex: 1;
     position: relative;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     @include mobile {
-      padding: 50px;
+      padding: 30px;
       width: 100%;
     }
 
-
     .phoneSvg {
-      stroke: orange;
+      stroke: rgb(12, 84, 150);
       position: absolute;
       margin: auto;
       z-index: -1;
+      opacity: 0.3;
     }
 
     form {
       display: flex;
       flex-direction: column;
       gap: 20px;
+      width: 90%;
+      max-width: 450px;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      
+      @include mobile {
+        padding: 20px;
+      }
 
       input,
       textarea {
-        padding: 20px;
-        background-color: transparent;
-        border: 1px solid white;
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.3);
         color: white;
-        border-radius: 5px;
-
+        border-radius: 10px;
+        font-size: 16px;
+        transition: 0.3s ease-in-out;
+        outline: none;
+        
         @include mobile {
-          padding: 10px;
+          padding: 12px;
+          font-size: 14px;
         }
+
+        &:focus {
+          border-color: orange;
+          box-shadow: 0px 0px 10px rgba(255, 165, 0, 0.6);
+        }
+      }
+
+      textarea {
+        resize: none;
+        height: 120px;
       }
 
       button {
-        padding: 20px;
+        padding: 15px;
         border: none;
-        background-color: orange;
+        background: linear-gradient(135deg, orange, orangered);
+        color: white;
+        font-size: 18px;
+        font-weight: 600;
+        border-radius: 8px;
         cursor: pointer;
-        font-weight: 500;
+        transition: 0.3s ease-in-out;
+        box-shadow: 0px 5px 15px rgba(255, 140, 0, 0.3);
+        
         @include mobile {
-          padding: 10px;
+          padding: 12px;
+          font-size: 16px;
+        }
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0px 8px 20px rgba(255, 140, 0, 0.5);
         }
       }
+    }
+  }
+
+  /* Footer styles */
+  .footer {
+    position: absolute;
+    bottom: 20px; /* To place it at the bottom */
+    right: 10px; /* Align footer to the right */
+    width: auto;
+    text-align: right;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align items to the right */
+    gap: 15px;
+
+    .footerLinks {
+      display: flex;
+      gap: 20px;
+      justify-content: flex-end;
+      align-items: center;
+
+      a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        transition: 0.3s ease;
+        
+        &:hover {
+          color: orange;
+        }
+      }
+    }
+
+    .horizontalLine {
+      width: 1360px;
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      margin: 10px 0;
+    }
+
+    .copyright {
+      font-size: 12px;
+      font-weight: 300;
     }
   }
 }
