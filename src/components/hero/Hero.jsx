@@ -49,7 +49,8 @@ const Hero = () => {
           animate="animate"
         >
           <motion.h2 variants={textVariants}>
-            <span className="highlight">H</span>EY, I'm
+            <span className="highlight">H</span>EY, 
+            <span className="highlight">I</span>'m
             <span className="highlight">R</span>ISHABH
             <span className="superscript">
               <span className="highlight2">D</span>EV
@@ -59,11 +60,14 @@ const Hero = () => {
             A YOUNG <span>DEVELOPER</span>
           </motion.h1>
 
+          {/* 🎨 Updated Buttons */}
           <motion.div variants={textVariants} className="buttons">
-            <motion.button variants={textVariants}>
+            <motion.button variants={textVariants} className="primary-btn">
               See the Latest Works
             </motion.button>
-            <motion.button variants={textVariants}>Contact Me</motion.button>
+            <motion.button variants={textVariants} className="secondary-btn">
+              Download Resume
+            </motion.button>
           </motion.div>
 
           {/* Scroll Image and Text */}
@@ -79,7 +83,6 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      {/* Ensure this motion.div is properly closed */}
       <motion.div
         className="slidingTextContainer"
         variants={sliderVariants}

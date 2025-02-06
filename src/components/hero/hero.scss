@@ -43,45 +43,80 @@
 
       .developer-text {
         font-size: 88px;
-        white-space: nowrap; // Ensures text does not wrap
+        white-space: nowrap;
 
         @include mobile {
           font-size: 36px;
         }
 
         span {
-          font-size: inherit; // Keeps the same font size as the parent (h1)
-          color: rebeccapurple; // Optional: Highlight span text if needed
+          font-size: inherit;
+          color: rebeccapurple;
         }
       }
 
-
       .highlight {
-        font-size: 36px; // Slightly larger "R"
+        font-size: 36px;
         margin-left: 6px;
       }
 
       .highlight2 {
-        font-size: 26px; // Slightly larger "R"
+        font-size: 26px;
       }
 
       .superscript {
-        font-size: 18px; // Smaller size for "DEV"
+        font-size: 18px;
         position: relative;
-        top: -10px; // Moves "DEV" up
-        margin-left: 1px; // Small gap from "RISHABH"
+        top: -10px;
+        margin-left: 1px;
       }
 
+      /* 🎨 Stylish Buttons */
       .buttons {
+        display: flex;
+        gap: 20px;
+
         button {
-          padding: 20px;
-          border: 1px solid white;
-          border-radius: 10px;
-          background-color: transparent;
-          color: white;
-          margin-right: 20px;
+          padding: 15px 30px;
+          border: none;
+          border-radius: 50px;
+          font-size: 10px;
+          font-weight: bold;
           cursor: pointer;
-          font-weight: 300;
+          transition: all 0.3s ease-in-out;
+          position: relative;
+          overflow: hidden;
+          z-index: 1;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+
+        .primary-btn {
+          background: rgba(255, 255, 255, 0.2);
+          border: 2px solid white;
+          color: white;
+          backdrop-filter: blur(10px);
+
+          &:hover {
+            background: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+          }
+        }
+
+        .secondary-btn {
+          background: rgba(255, 255, 255, 0.2);
+          border: 2px solid white;
+          color: white;
+          backdrop-filter: blur(10px);
+
+          &:hover {
+            background: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+          }
         }
       }
 
@@ -123,24 +158,23 @@
   }
 
   .scrollContainer {
-  display: flex;
-  align-items: center; 
-  gap: 10px; // Adjust spacing between image and text
+    display: flex;
+    align-items: center; 
+    gap: 10px;
 
-  img {
-    width: 50px; // Adjust size as needed
+    img {
+      width: 50px;
+    }
+
+    span {
+      color: white;
+      font-size: 16px;
+      font-weight: 300;
+      white-space: nowrap;
+    }
   }
 
-  span {
-    color: white;
-    font-size: 16px;
-    font-weight: 300;
-    white-space: nowrap;
+  .dive {
+    margin-top: 45px;
   }
-}
-
-.dive{
-  margin-top: 45px;
-}
-
 }
