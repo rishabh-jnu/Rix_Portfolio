@@ -37,8 +37,8 @@ const Navbar = () => {
   };
 
   return (
-    <motion.div 
-      className={`navbar ${visible ? "visible" : "hidden"}`} 
+    <motion.div
+      className={`navbar ${visible ? "visible" : "hidden"}`}
       initial={{ y: -100 }}
       animate={{ y: visible ? 0 : -100 }}
       transition={{ duration: 0.3 }}
@@ -70,8 +70,11 @@ const Navbar = () => {
         </div>
 
         <div className="social">
+          <a href="https://www.linkedin.com/in/rishabh-yadav-999112230/" target="_blank" rel="noopener noreferrer">
+            <img className="github" src="/linkedin.png" alt="GitHub" />
+          </a>
           <a href="https://x.com/rishabhyad19" target="_blank" rel="noopener noreferrer">
-            <img src="/twitter.png" alt="Twitter" />
+            <img src="/x.png" alt="Twitter" />
           </a>
           <a href="https://www.youtube.com/@jnuwalaengineer" target="_blank" rel="noopener noreferrer">
             <img src="/youtube.png" alt="YouTube" />

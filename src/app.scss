@@ -10,6 +10,14 @@ html {
   font-family: "DM Sans", sans-serif;
 }
 
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;    
+  -ms-user-select: none;     
+  user-select: none;         
+}
+
+
 body {
   background-color: #0c0c1d;
   color: lightgray;

@@ -118,14 +118,14 @@ const Contact = () => {
       {/* Footer Section */}
       <div className="footer">
         <div className="footerLinks">
-          <div>Explore  -</div>
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#techstack">TechStack</a>
-          <a href="#project">Project</a>
+          <div>EXPLORE  -</div>
+          <a href="#home">HOME</a>
+          <a href="#about">ABOUT</a>
+          <a href="#techstack">TECHSTACK</a>
+          <a href="#project">PROJECT</a>
         </div>
         <hr className="horizontalLine" />
-        <div className="copyright">© 2025 Rishabh. All Rights Reserved.</div>
+        <div className="copyright">© 2025 Rishabh Dev. All Rights Reserved.</div>
       </div>
     </motion.div>
   );
