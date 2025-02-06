@@ -6,12 +6,12 @@ import "./sidebar.scss";
 
 const sidebarVariants = {
   open: {
-    x: 0, // Slides in from the left
+    x: 0, // Sidebar slides in
     opacity: 1,
     transition: { type: "spring", stiffness: 100, damping: 15 },
   },
   closed: {
-    x: "-100%", // Moves out of the screen
+    x: "-100%", // Sidebar slides out
     opacity: 0,
     transition: { type: "spring", stiffness: 300, damping: 30 },
   },
@@ -28,12 +28,10 @@ const Sidebar = () => {
         initial="closed"
         animate={open ? "open" : "closed"}
       >
-        <button className="close-btn" onClick={() => setOpen(false)}>
-          ✖
-        </button>
         <Links />
       </motion.div>
-      <ToggleButton setOpen={setOpen} />
+      {/* Pass `open` state to ToggleButton */}
+      <ToggleButton open={open} setOpen={setOpen} />
     </>
   );
 };
