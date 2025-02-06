@@ -48,6 +48,7 @@ const Hero = () => {
           initial="initial"
           animate="animate"
         >
+          <div className="text">
           <motion.h2 variants={textVariants}>
             <span className="highlight">H</span>EY, 
             <span className="highlight">I</span>'m
@@ -59,6 +60,8 @@ const Hero = () => {
           <motion.h1 variants={textVariants} className="developer-text">
             A YOUNG <span>DEVELOPER</span>
           </motion.h1>
+          </div>
+          
 
           {/* 🎨 Updated Buttons */}
           <motion.div variants={textVariants} className="buttons">
