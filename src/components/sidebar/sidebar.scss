@@ -1,56 +1,76 @@
 @import "../../app.scss";
+
 .sidebar {
+  position: fixed;
+  top: 50px; /* Centered vertically */
+  left: 0;
+  width: 280px;
+  height: 300px; /* No longer full height */
+  background: rgba(255, 255, 255, 0.15); /* Semi-transparent */
+  backdrop-filter: blur(20px); /* Smooth glass effect */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.3); /* Soft shadow */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: white;
-  color: black;
-  
-  .bg {
-    z-index: 999;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 400px;
-    background: white;
+  z-index: 1000;
+}
 
-    @include mobile {
-      width: 200px;
-    }
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 
-    .links {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
+  a {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: all 0.3s ease-in-out;
 
-      a {
-        font-size: 40px;
-
-        @include mobile {
-          font-size: 20px;
-        }
-      }
+    &:hover {
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 10px;
+      transform: scale(1.1);
     }
   }
+}
 
-  button {
-    z-index: 999;
-    position: fixed;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    position: fixed;
-    top: 25px;
-    left: 25px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: #ff7eb3;
+    transform: scale(1.2);
+  }
+}
+
+.menu-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  svg {
+    width: 30px;
+    height: 30px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover {
+    transform: scale(1.1);
   }
 }
