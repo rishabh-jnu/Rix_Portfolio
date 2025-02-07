@@ -42,7 +42,7 @@ const Parallax = ({ type }) => {
         ) : (
           <>
           <h1 className="elevate2">The <br/> Visionary <br />WorkSpace.</h1>
-          <p className="subtext2">A space for groundbreaking ideas and showcase brilliance.</p>
+          <p className="subtext2">A space for groundbreaking ideas <br /> and showcase brilliance.</p>
           </>
           
         )}

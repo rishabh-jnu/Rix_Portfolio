@@ -25,6 +25,7 @@
     align-items: flex-start;
     text-align: left;
     z-index: 4;
+    
 
     .elevate {
       font-size: 150px;
@@ -40,6 +41,8 @@
       margin-top: -10px;
       font-weight: semi-bold;
       font-family: Verdana, Geneva, Tahoma, sans-serif;
+      letter-spacing: 5px;
+      font-weight: semi-bold;
     }
 
     .tech-stack {
@@ -56,12 +59,15 @@
       font-weight: bold;
       color: white;
       margin-top: 150px;
+
     }
 
     .subtext2 {
       font-size: 20px;
       color: #aaa;
       margin-top: 20px;
+      letter-spacing: 5px;
+      font-weight: semi-bold;
     }
 
     @include mobile {
