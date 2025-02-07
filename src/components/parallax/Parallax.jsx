@@ -37,7 +37,7 @@ const Parallax = ({ type }) => {
           <>
             <span className="elevate">Elevate.</span>
             <span className="subtext">From Code to Creation</span>
-            <span className="tech-stack">Tech Stack</span>
+            <span className="tech-stack">TECHSTACK</span>
           </>
         ) : (
           <>
