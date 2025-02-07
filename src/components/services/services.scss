@@ -18,7 +18,7 @@
 
   .left {
     flex: 1;
-    max-width: 30%;
+    max-width: 40%;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -27,14 +27,16 @@
     h1 {
       font-size: 55px;
       font-weight: bold;
-      color: #13b1c2;
-      font-family: vailery;
+      color: white;
+      font-family: cursive;
     }
 
     p {
       font-size: 18px;
       color: gray;
-      max-width: 300px;
+      max-width: 450px;
+      word-spacing: 5px;
+      letter-spacing: 5px;
     }
 
     @include mobile {
@@ -45,7 +47,7 @@
 
   .right {
     flex: 2;
-    max-width: 70%;
+    max-width: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -88,21 +90,30 @@
         .tech-name {
           font-size: 50px;
           font-weight: bold;
-          color: #13b1c2;
+          color: white;
+          margin-right: 20px;
+        }
+
+        .tech-desc {
+          word-spacing: 5px;
+          letter-spacing: 2px;
+          font-weight: bold;
         }
 
         .separator {
           margin: 0 8px;
           font-weight: bold;
           color: white;
+          font-size: 30px;
+          margin-bottom: 30px;
         }
       }
     }
 
     .floating-logo {
       position: fixed;
-      width: 60px;
-      height: 60px;
+      width: 80px;
+      height: 80px;
       pointer-events: none;
       transform: translate(-50%, -50%);
       z-index: 100;

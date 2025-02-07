@@ -4,18 +4,18 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 // Initial Tech Stack
 const techStack = [
-  { name: "React", description: "Creating dynamic user experiences", img: "/react.png" },
-  { name: "Next.js", description: "Server-side rendering & static site generation", img: "/nextjs.png" },
-  { name: "Node.js", description: "Building scalable backend services", img: "/nodejs.png" },
-  { name: "Express.js", description: "Minimal and flexible backend framework", img: "/express.png" },
-  { name: "MongoDB", description: "NoSQL database for modern applications", img: "/mongodb.png" },
-  { name: "Tailwind CSS", description: "Utility-first CSS framework", img: "/tailwind.png" },
+  { name: "HTML", description: "Structuring and organizing web content", img: "/html1.png" },
+  { name: "CSS", description: "Styling and designing web pages", img: "/CSS.png" },
+  { name: "JAVASCRIPT", description: "Adding interactivity to websites", img: "/js.png" },
+  { name: "REACT", description: "Creating dynamic user experiences", img: "/react.png" },
+  { name: "FIGMA", description: "Designing and prototyping user interfaces", img: "/figma.webp" },
+  { name: "NODEJS", description: "Building scalable backend services", img: "/nodejs.png" },
+  { name: "EXPRESSJS", description: "Minimal and flexible backend framework", img: "/express.png" },
+  { name: "MONGODB", description: "NoSQL database for modern applications", img: "/mongodb.png" },
+  { name: "TAILWIND CSS", description: "Utility-first CSS framework", img: "/tailwind.png" },
   { name: "Framer Motion", description: "Smooth animations for React", img: "/framer.png" },
   { name: "Redux", description: "State management for scalable apps", img: "/redux.png" },
-  { name: "TypeScript", description: "JavaScript with static types", img: "/typescript.png" },
-  { name: "GraphQL", description: "Efficient data fetching", img: "/graphql.png" },
-  { name: "Docker", description: "Containerizing applications", img: "/docker.png" },
-  { name: "Kubernetes", description: "Automating deployment & scaling", img: "/kubernetes.png" },
+  { name: "TypeScript", description: "JavaScript with static types", img: "/ts.png" },
   { name: "Firebase", description: "Backend services for mobile & web", img: "/firebase.png" },
 ];
 
@@ -44,8 +44,8 @@ const Services = () => {
       <div className="left">
         <h1>FRONTEND & <br />BACKEND TECH</h1>
         <p>
-          Design smooth, interactive experiences that captivate users, using the
-          best tools to bring your vision to life.
+          Craft seamless, engaging experiences that captivate users,
+          leveraging top-notch tools to bring your vision to reality.
         </p>
       </div>
 
@@ -61,7 +61,7 @@ const Services = () => {
             >
               <div className="tech-info">
                 <span className="tech-name">{tech.name}</span>
-                <span className="separator">-</span>
+                <span className="separator">_</span>
                 <span className="tech-desc">{tech.description}</span>
               </div>
             </motion.div>
