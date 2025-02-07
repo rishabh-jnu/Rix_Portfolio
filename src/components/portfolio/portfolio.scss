@@ -11,6 +11,8 @@
     text-align: center;
     color: #fff;
     font-size: 36px;
+    text-transform: uppercase;
+    font-weight: 600;
 
     @include mobile {
       padding-top: calc(100vh - 100px);
@@ -58,6 +60,7 @@
           width: 400px;
           height: 400px;
           object-fit: cover;
+          margin-left: 80px;
 
           @include mobile {
             object-fit: contain;
@@ -70,6 +73,9 @@
         display: flex;
         flex-direction: column;
         gap: 30px;
+        margin-right: 80px;
+        // letter-spacing: 2px;
+        // font-weight: semi-bold;
 
         @include mobile {
           transform: none !important;
@@ -79,7 +85,8 @@
         }
 
         h2 {
-          font-size: 72px;
+          font-size: 60px;
+          // text-transform: uppercase;
 
           @include mobile {
             font-size: 36px;
@@ -89,6 +96,8 @@
         p {
           color: gray;
           font-size: 20px;
+          letter-spacing: 2PX;
+          // max-width: 90%;
 
           @include mobile {
             font-size: 16px;
@@ -96,8 +105,9 @@
         }
 
         button {
-          background-color: none;
-          border: white 2px solid;
+          background-color: transparent;
+          border: rgb(155, 155, 155) 2px solid;
+          color: rgb(114, 99, 99);
           border-radius: 20px;
           padding: 10px;
           width: 160px;

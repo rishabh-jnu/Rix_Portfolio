@@ -5,25 +5,25 @@ import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 const items = [
   {
     id: 1,
-    title: "Health Management",
+    title: "HEALTH MANAGEMENT",
     img: "marvel1.jpg",
     desc: " MERN Application for managing health records of patients and doctors.",
   },
   {
     id: 2,
-    title: "BlogApp",
+    title: "BLOGAPP",
     img: "marvel2.jpg",
     desc: "BlogApp is a full stack application where users can create, read, update and delete blogs.",
   },
   {
     id: 3,
-    title: "GymViteApp",
+    title: "GYMVITEAPP",
     img: "marvel3.jpg",
     desc: "GymViteApp is a MERN application where Gymrates can take refrence for gym workouts.",
   },
   {
     id: 4,
-    title: "CarbonFootprint",
+    title: "CARBONFOOTPRINT",
     img: "thor.jpg",
     desc: "CarbonFootprint is a Front-End application where users can calculate their carbon footprint.",
   },
