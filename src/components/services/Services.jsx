@@ -7,15 +7,12 @@ const techStack = [
   { name: "HTML", description: "Structuring and organizing web content", img: "/html1.png" },
   { name: "CSS", description: "Styling and designing web pages", img: "/CSS.png" },
   { name: "JAVASCRIPT", description: "Adding interactivity to websites", img: "/js.png" },
+  { name: "TAILWIND CSS", description: "Utility-first CSS framework", img: "/tailwind.png" },
+  { name: "TYPESCRIPT", description: "JavaScript with static types", img: "/ts.png" },
   { name: "REACT", description: "Creating dynamic user experiences", img: "/react.png" },
   { name: "FIGMA", description: "Designing and prototyping user interfaces", img: "/figma.webp" },
   { name: "NODEJS", description: "Building scalable backend services", img: "/nodejs.png" },
-  { name: "EXPRESSJS", description: "Minimal and flexible backend framework", img: "/express.png" },
-  { name: "MONGODB", description: "NoSQL database for modern applications", img: "/mongodb.png" },
-  { name: "TAILWIND CSS", description: "Utility-first CSS framework", img: "/tailwind.png" },
-  { name: "Framer Motion", description: "Smooth animations for React", img: "/framer.png" },
-  { name: "Redux", description: "State management for scalable apps", img: "/redux.png" },
-  { name: "TypeScript", description: "JavaScript with static types", img: "/ts.png" },
+  { name: "MONGODB", description: "NoSQL database for modern applications", img: "/mongodb.png" },  
   { name: "Firebase", description: "Backend services for mobile & web", img: "/firebase.png" },
 ];
 
