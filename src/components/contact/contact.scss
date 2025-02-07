@@ -20,6 +20,7 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
+    color: white;
 
     @include mobile {
       gap: 20px;
@@ -31,14 +32,19 @@
     h1 {
       font-size: 100px;
       line-height: 88px;
-
       @include mobile {
         font-size: 36px;
       }
     }
+    h2 {
+      color: rgb(230, 218, 218);
+
+    }
 
     span {
       font-weight: 300;
+      color: rgb(166, 157, 157);
+
     }
   }
 
