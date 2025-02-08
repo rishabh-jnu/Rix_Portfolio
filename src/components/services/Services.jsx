@@ -13,7 +13,9 @@ const techStack = [
   { name: "FIGMA", description: "Designing and prototyping user interfaces", img: "/figma.webp" },
   { name: "NODEJS", description: "Building scalable backend services", img: "/nodejs.png" },
   { name: "MONGODB", description: "NoSQL database for modern applications", img: "/mongodb.png" },  
-  { name: "Firebase", description: "Backend services for mobile & web", img: "/firebase.png" },
+  { name: "FIREBASE", description: "Backend services for mobile & web", img: "/firebase.png" },
+  { name: "OTHER TECH", description: "Backend services for mobile & web" },
+
 ];
 
 const Services = () => {

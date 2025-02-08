@@ -1,19 +1,32 @@
 @import "../../app.scss";
 
+// Define breakpoints
+$breakpoint-large: 1200px;
+$breakpoint-medium: 1024px;
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 600px;
+
 .services {
   display: flex;
   align-items: start;
   justify-content: space-between;
   height: 100vh;
   padding: 50px;
-  background: linear-gradient(180deg, #0c0c1d, #111132);
+  background: linear-gradient(180deg, #0c0c1e, #13132f);
   color: white;
   overflow: hidden;
 
-  @include mobile {
+  @media (max-width: $breakpoint-medium) {
+    padding: 40px;
     flex-direction: column;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    padding: 30px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
     padding: 20px;
-    text-align: center;
   }
 
   .left {
@@ -29,6 +42,23 @@
       font-weight: bold;
       color: white;
       font-family: cursive;
+
+      @media (max-width: $breakpoint-large) {
+        font-size: 45px;
+      }
+
+      @media (max-width: $breakpoint-medium) {
+        font-size: 38px;
+      }
+
+      @media (max-width: $breakpoint-tablet) {
+        font-size: 32px;
+        text-align: center;
+      }
+
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 28px;
+      }
     }
 
     p {
@@ -37,11 +67,30 @@
       max-width: 450px;
       word-spacing: 5px;
       letter-spacing: 5px;
+
+      @media (max-width: $breakpoint-large) {
+        font-size: 16px;
+      }
+
+      @media (max-width: $breakpoint-medium) {
+        font-size: 15px;
+        max-width: 100%;
+      }
+
+      @media (max-width: $breakpoint-tablet) {
+        font-size: 14px;
+        text-align: center;
+      }
+
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 13px;
+      }
     }
 
-    @include mobile {
+    @media (max-width: $breakpoint-medium) {
       max-width: 100%;
       text-align: center;
+      margin-left: 0;
     }
   }
 
@@ -56,9 +105,17 @@
     overflow-y: auto;
     scrollbar-width: none;
 
-    @include mobile {
+    @media (max-width: $breakpoint-large) {
+      max-width: 70%;
+    }
+
+    @media (max-width: $breakpoint-medium) {
       max-width: 100%;
       gap: 20px;
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+      gap: 15px;
     }
 
     .tech-list {
@@ -67,6 +124,11 @@
       gap: 0;
       width: 100%;
       align-items: start;
+
+      @media (max-width: $breakpoint-tablet) {
+        align-items: center;
+        margin-left: 75px;
+      }
     }
 
     .tech-item {
@@ -87,17 +149,60 @@
         font-size: 18px;
         color: #ccc;
 
+        @media (max-width: $breakpoint-medium) {
+          font-size: 16px;
+        }
+
+        @media (max-width: $breakpoint-tablet) {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        @media (max-width: $breakpoint-mobile) {
+          font-size: 14px;
+        }
+
         .tech-name {
-          font-size: 50px;
+          font-size: 45px;
           font-weight: bold;
           color: white;
           margin-right: 20px;
+
+          @media (max-width: $breakpoint-large) {
+            font-size: 45px;
+          }
+
+          @media (max-width: $breakpoint-medium) {
+            font-size: 40px;
+          }
+
+          @media (max-width: $breakpoint-tablet) {
+            font-size: 30px;
+            margin-right: 0;
+          }
+
+          @media (max-width: $breakpoint-mobile) {
+            font-size: 25px;
+          }
         }
 
         .tech-desc {
           word-spacing: 5px;
           letter-spacing: 2px;
           font-weight: bold;
+
+          @media (max-width: $breakpoint-medium) {
+            font-size: 15px;
+          }
+
+          @media (max-width: $breakpoint-tablet) {
+            font-size: 14px;
+          }
+
+          @media (max-width: $breakpoint-mobile) {
+            font-size: 13px;
+          }
         }
 
         .separator {
@@ -106,8 +211,11 @@
           color: white;
           font-size: 30px;
           margin-bottom: 30px;
+
+          @media (max-width: $breakpoint-tablet) {
+            display: none;
+          }
         }
-        
       }
     }
 
@@ -119,6 +227,16 @@
       transform: translate(-50%, -50%);
       z-index: 100;
       opacity: 0.9;
+
+      @media (max-width: $breakpoint-medium) {
+        width: 60px;
+        height: 60px;
+      }
+
+      @media (max-width: $breakpoint-tablet) {
+        width: 50px;
+        height: 50px;
+      }
     }
 
     .show-more-btn {
@@ -135,6 +253,16 @@
 
       &:hover {
         background: #0e8794;
+      }
+
+      @media (max-width: $breakpoint-medium) {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+
+      @media (max-width: $breakpoint-tablet) {
+        padding: 8px 16px;
+        font-size: 13px;
       }
     }
   }
