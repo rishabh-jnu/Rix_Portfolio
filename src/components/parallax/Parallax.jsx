@@ -4,20 +4,17 @@ import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
 const Parallax = ({ type }) => {
   const ref = useRef();
-
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
   });
 
-  // Apply smooth scrolling effect
   const smoothScroll = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 20,
     mass: 1,
   });
 
-  // Adjusted yText transformation to prevent excessive downward movement
   const yText = useTransform(smoothScroll, [0, 1], ["0%", "80%"]);
   const yBg = useTransform(smoothScroll, [0, 1], ["0%", "40%"]);
 
@@ -29,7 +26,7 @@ const Parallax = ({ type }) => {
         background:
           type === "services"
             ? "linear-gradient(180deg, #111132, #0c0c1d)"
-            : "linear-gradient(180deg, #111132,rgb(0, 0, 0))",
+            : "linear-gradient(180deg, #111132, rgb(0, 0, 0))",
       }}
     >
       <motion.div className="text-container" style={{ y: yText }}>
@@ -41,13 +38,15 @@ const Parallax = ({ type }) => {
           </>
         ) : (
           <>
-          <h1 className="elevate2">The <br/> Visionary <br />WorkSpace.</h1>
-          <p className="subtext2">A space for groundbreaking ideas <br /> and showcase brilliance.</p>
-          <p className="subtext3">Here are some projects I developed throughout my learning journey. Each one highlights the skills 
-            I acquired and demonstrates how I transformed ideas into practical, real-world applications.</p>
+            <h1 className="elevate2">The <br/> Visionary <br /> WorkSpace.</h1>
+            <p className="subtext2">A space for groundbreaking ideas <br /> and showcase brilliance.</p>
+            <p className="subtext3">
+              Here are some projects I developed throughout my learning journey. 
+              Each one highlights the skills I acquired and demonstrates how I transformed ideas 
+              into practical, real-world applications.
+            </p>
             <hr className="hrsub" />
           </>
-          
         )}
       </motion.div>
 
