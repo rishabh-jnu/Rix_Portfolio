@@ -39,9 +39,12 @@ const Contact = () => {
       .then(
         (result) => {
           setSuccess(true);
+          setError(false);
+          e.target.reset();
         },
         (error) => {
           setError(true);
+          setSuccess(false);
         }
       );
   };
