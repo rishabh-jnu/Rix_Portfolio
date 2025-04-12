@@ -14,7 +14,7 @@
     height: 100%;
 
     @include mobile {
-      justify-content: flex-end;
+      justify-content: flex-start;
       padding: 20px;
     }
 
@@ -22,39 +22,64 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-    }
-
-    .name {
-      font-weight: 600;
-      font-size: 24px;
-      display: flex;
-      align-items: baseline;
-
+    
       @include mobile {
-        display: none;
+        align-items: flex-start;
+        margin-left: 35px;
       }
-
-      .highlight {
+    
+      .name {
+        font-weight: 600;
+        font-size: 24px;
+        display: flex;
+        align-items: baseline;
+    
+        .highlight {
+          font-size: 32px;
+        }
+    
+        .highlight2 {
+          font-size: 22px;
+        }
+    
+        .superscript {
+          font-size: 18px;
+          position: relative;
+          top: -10px;
+          margin-left: 3px;
+        }
+    
+        @include mobile {
+          font-size: 18px;
+    
+          .highlight {
+            font-size: 24px;
+          }
+    
+          .highlight2 {
+            font-size: 16px;
+          }
+    
+          .superscript {
+            font-size: 14px;
+            top: -8px;
+          }
+        }
+      }
+    
+      .portfolio {
         font-size: 32px;
-      }
-      .highlight2 {
-        font-size: 22px;
-      }
-
-      .superscript {
-        font-size: 18px;
-        position: relative;
-        top: -10px;
-        margin-left: 3px;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-family: Arial, sans-serif;
+    
+        @include mobile {
+          font-size: 18px;
+          margin-top: 2px;
+        }
       }
     }
-
-    .portfolio {
-      font-size: 32px;
-      font-weight: 600;
-      text-transform: uppercase;
-      font-family: Arial, sans-serif;
-    }
+    
 
     .social {
       display: flex;
