@@ -20,7 +20,7 @@ const Links = () => {
           href={`#${item}`}
           key={item}
           variants={itemVariants}
-          whileHover={{ scale: 1.1, color: "#ff7eb3" }} // Hover effect
+          whileHover={{ scale: 1.1, color: "#363333" }} // Hover effect
           whileTap={{ scale: 0.95 }}
         >
           {item}
