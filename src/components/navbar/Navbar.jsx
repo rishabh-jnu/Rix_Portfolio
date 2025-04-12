@@ -9,15 +9,10 @@ const Navbar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [visible, setVisible] = useState(true);
 
-  // Handle Navbar Visibility on Scroll
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY) {
-        setVisible(false); // Hide navbar on scroll down
-      } else {
-        setVisible(true); // Show navbar on scroll up
-      }
+      setVisible(currentScrollY < lastScrollY);
       setLastScrollY(currentScrollY);
     };
 
@@ -27,11 +22,7 @@ const Navbar = () => {
 
   const toggleMusic = () => {
     if (audioRef.current) {
-      if (isPlaying) {
-        audioRef.current.pause();
-      } else {
-        audioRef.current.play();
-      }
+      isPlaying ? audioRef.current.pause() : audioRef.current.play();
       setIsPlaying(!isPlaying);
     }
   };
@@ -43,7 +34,7 @@ const Navbar = () => {
       animate={{ y: visible ? 0 : -100 }}
       transition={{ duration: 0.3 }}
     >
-      <Sidebar />
+      <Sidebar isPlaying={isPlaying} toggleMusic={toggleMusic} audioRef={audioRef} />
       <div className="wrapper">
         <div className="name-container">
           <motion.span
@@ -56,7 +47,6 @@ const Navbar = () => {
             <span className="superscript">
               <span className="highlight2">D</span>EV
             </span>
-            <br />
           </motion.span>
 
           <motion.span
@@ -69,9 +59,10 @@ const Navbar = () => {
           </motion.span>
         </div>
 
+        {/* Social Media Links: only visible on desktop */}
         <div className="social">
           <a href="https://www.linkedin.com/in/rishabh-yadav-999112230/" target="_blank" rel="noopener noreferrer">
-            <img className="github" src="/linkedin.png" alt="GitHub" />
+            <img className="github" src="/linkedin.png" alt="LinkedIn" />
           </a>
           <a href="https://x.com/rishabhyad19" target="_blank" rel="noopener noreferrer">
             <img src="/x.png" alt="Twitter" />
@@ -82,13 +73,9 @@ const Navbar = () => {
           <a href="https://github.com/rishabh-jnu" target="_blank" rel="noopener noreferrer">
             <img className="github" src="/github.jpeg" alt="GitHub" />
           </a>
-
-          {/* Music Icon */}
           <div className={`music-icon ${isPlaying ? "playing" : ""}`} onClick={toggleMusic}>
             <img src="/music1.png" alt="Music" />
           </div>
-
-          {/* Audio Player (Hidden) */}
           <audio ref={audioRef} src="/spotifyOr.mp3"></audio>
         </div>
       </div>

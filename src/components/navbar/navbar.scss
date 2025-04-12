@@ -3,7 +3,7 @@
 
 .navbar {
   height: 100px;
-  font-family: 'General Sans', sans-serif; // Apply font
+  font-family: 'General Sans', sans-serif;
 
   .wrapper {
     max-width: 1366px;
@@ -22,8 +22,6 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      letter-spacing: 1px;
-
     }
 
     .name {
@@ -38,8 +36,6 @@
 
       .highlight {
         font-size: 32px;
-        font-family: sans-serif;
-
       }
       .highlight2 {
         font-size: 22px;
@@ -58,12 +54,19 @@
       font-weight: 600;
       text-transform: uppercase;
       font-family: Arial, sans-serif;
-
     }
 
     .social {
       display: flex;
       gap: 20px;
+
+      @include mobile {
+        display: none;
+      }
+
+      @include tablet {
+        display: none;
+      }
 
       a {
         display: inline-block;
@@ -74,11 +77,10 @@
         width: 24px;
         height: 24px;
         border-radius: 10%;
-        transition: transform 0.3s ease, filter 0.3s ease;
       }
 
-      /* Hover Effects */
-      a:hover, .music-icon:hover {
+      a:hover,
+      .music-icon:hover {
         transform: scale(1.2);
       }
 
@@ -86,19 +88,12 @@
         filter: brightness(1.3);
       }
 
-      /* Music Icon */
       .music-icon {
         cursor: pointer;
-        transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
 
         img {
           width: 26px;
           height: 26px;
-        }
-
-        &:hover {
-          transform: scale(1.2);
-          filter: brightness(1.3);
         }
 
         &.playing {
@@ -109,7 +104,6 @@
   }
 }
 
-/* Pulse animation when music is playing */
 @keyframes pulse {
   0% {
     transform: scale(1);
