@@ -32,6 +32,10 @@
       font-weight: bold;
       color: white;
       font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
+
+      @include mobile {
+        align-items: start;
+      }
     }
 
     .subtext {
@@ -40,6 +44,12 @@
       margin-top: -10px;
       font-weight: 600;
       letter-spacing: 3px;
+
+      @include mobile {
+        align-items: start;
+        margin-left: 10px;
+        padding-top: 10px;
+      }
     }
 
     .tech-stack {
@@ -47,6 +57,12 @@
       font-weight: 600;
       color: #ffffff;
       margin-top: 15vh;
+
+      @include mobile {
+        align-items: start;
+        margin-right: 80px;
+        margin-top: 400px;
+      }
     }
 
     .elevate2 {
