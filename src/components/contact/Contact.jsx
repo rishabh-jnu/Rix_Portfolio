@@ -58,17 +58,17 @@ const Contact = () => {
       whileInView="animate"
     >
       <motion.div className="textContainer" variants={variants}>
-        <motion.h1 variants={variants}>Let’s work together</motion.h1>
+        <motion.h1 className="let" variants={variants}>Let’s work together</motion.h1>
         <motion.div className="item" variants={variants}>
-          <h2>Mail</h2>
-          <span>rishabhyadav70070@gmail.com</span>
+          <h2>Mail : </h2>
+          <span> rishabhyadav70070@gmail.com</span>
         </motion.div>
         <motion.div className="item" variants={variants}>
-          <h2>Address</h2>
+          <h2>Address :</h2>
           <span>Jawaharlal Nehru University New Delhi</span>
         </motion.div>
         <motion.div className="item" variants={variants}>
-          <h2>Phone</h2>
+          <h2>Phone :</h2>
           <span>+91 895353XXXX</span>
         </motion.div>
       </motion.div>
@@ -79,8 +79,8 @@ const Contact = () => {
           whileInView={{ opacity: 0 }}
           transition={{ delay: 3, duration: 1 }}
         >
-          <svg width="450px" height="450px" viewBox="0 0 32.666 32.666">
-            <motion.path
+          <svg className="phone" width="450px" height="450px" viewBox="0 0 32.666 32.666">
+            <motion.path 
               strokeWidth={0.2}
               fill="none"
               initial={{ pathLength: 0 }}
