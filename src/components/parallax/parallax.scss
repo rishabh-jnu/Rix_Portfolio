@@ -78,6 +78,7 @@
       letter-spacing: 2px;
       max-width: 80%;
       margin-top: 20px;
+      
     }
 
     .subtext3 {
@@ -91,6 +92,29 @@
       width: 50%;
       margin-top: 2rem;
       border: 1px solid #645959;
+    }
+
+    @include mobile {
+      .subtext2{
+          align-items: flex-start;
+          text-align: start;
+          margin-right: 40px;
+      }
+    }
+
+    @include mobile {
+      .elevate2 {
+          align-items: flex-start;
+          text-align: start;
+          margin-right: 90px;
+      }
+    }
+
+    @include mobile {
+      .subtext3 {
+          align-items: flex-start;
+          text-align: start;
+      }
     }
 
     @include mobile {
