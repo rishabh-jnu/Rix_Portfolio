@@ -49,29 +49,47 @@ const Hero = () => {
           animate="animate"
         >
           <div className="text">
-          <motion.h2 variants={textVariants}>
-            <span className="highlight">H</span>EY, 
-            <span className="highlight">I</span>'m
-            <span className="highlight">R</span>ISHABH
-            <span className="superscript">
-              <span className="highlight2">D</span>EV
-            </span>
-          </motion.h2>
-          <motion.h1 variants={textVariants} className="developer-text">
-            A YOUNG <span>DEVELOPER</span>
-          </motion.h1>
+            <motion.h2 variants={textVariants}>
+              <span className="highlight">H</span>EY,
+              <span className="highlight">I</span>'m
+              <span className="highlight">R</span>ISHABH
+              <span className="superscript">
+                <span className="highlight2">D</span>EV
+              </span>
+            </motion.h2>
+            <motion.h1 variants={textVariants} className="developer-text">
+              A YOUNG <span>DEVELOPER</span>
+            </motion.h1>
           </div>
-          
 
-          {/* 🎨 Updated Buttons */}
+
+          {/* Updated Buttons */}
           <motion.div variants={textVariants} className="buttons">
-            <motion.button variants={textVariants} className="primary-btn">
-              See the Latest Works
-            </motion.button>
-            <motion.button variants={textVariants} className="secondary-btn">
+            <motion.a
+              variants={textVariants}
+              href="https://github.com/rishabh-jnu"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <motion.button variants={textVariants} className="primary-btn">
+                See the Latest Works
+              </motion.button>
+            </motion.a>
+
+
+            {/* Anchor tag wrapping the button */}
+            <motion.a
+              variants={textVariants}
+              className="secondary-btn"
+              href="/Rishabh_Resume.pdf"
+              target="_blank" // Open in a new tab
+              rel="noopener noreferrer" // Security enhancement
+            >
               Download Resume
-            </motion.button>
+            </motion.a>
           </motion.div>
+
+
 
           {/* Scroll Image and Text */}
           <div className="scrollContainer">

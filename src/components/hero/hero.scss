@@ -144,19 +144,22 @@
       .buttons {
         display: flex;
         gap: 20px;
-
+      
         @include tablet {
           justify-content: flex-start;
         }
-
+      
         @include mobile {
           flex-direction: column;
           align-items: center;
         }
-
-        button {
+      
+        .primary-btn, .secondary-btn {
+          background: rgba(255, 255, 255, 0.2);
+          border: 2px solid white;
+          color: white;
+          backdrop-filter: blur(10px);
           padding: 15px 30px;
-          border: none;
           border-radius: 50px;
           font-size: 10px;
           font-weight: bold;
@@ -167,34 +170,25 @@
           z-index: 1;
           text-transform: uppercase;
           letter-spacing: 1px;
-
+          text-decoration: none;  // Ensure no underline for anchor tags
+      
           &:hover {
-            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
           }
-
+      
           @include tablet {
             font-size: 12px;
             padding: 12px 25px;
           }
-
+      
           @include mobile {
             width: 100%;
             max-width: 250px;
           }
         }
-
-        .primary-btn, .secondary-btn {
-          background: rgba(255, 255, 255, 0.2);
-          border: 2px solid white;
-          color: white;
-          backdrop-filter: blur(10px);
-
-          &:hover {
-            background: rgba(255, 255, 255, 0.4);
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-          }
-        }
       }
+      
     }
   }
 
